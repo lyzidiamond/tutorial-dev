@@ -1,0 +1,118 @@
+<!DOCTYPE html><html><head><title>Big</title><meta charset='utf-8'><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link href='big.css' rel='stylesheet' type='text/css' />
+<script src='big.js'></script></head><body>
+
+<div>Using GeoJSON in Web Maps!</div>
+<div><em>PLEASE</em> interrupt if you have questions!</div>
+<div>Go to <a href="http://lyzidiamond.com/geojson-in-maps">http://lyzidiamond.com /geojson-in-maps</a> to follow along.</div>
+<div>(Use <strong>left</strong> and <strong>right</strong> arrows to navigate. Links have a <a href="#4">yellow background</a>.)</div>
+<div><em>PART ONE:</em> What is <strong>GeoJSON</strong>?</div>
+<div><em>GeoJSON</em> is a <strong>geographic data format</strong>.</div>
+<div>It is an extension of <strong>JSON</strong>, which stands for <em>JavaScript Object Notation</em>.</div>
+<div>GeoJSON has its <a href="http://geojson.org">own specification</a> for what must be included.</div>
+<div class="center"><img src="./images/geojson.png" />GeoJSON! <strong>:)</strong></div>
+<div>Let's break it down.</div>
+<div><em>JavaScript objects</em> exist of a series of <strong>key-value pairs</strong>.</div>
+<div><pre><span><strong>"key"</strong>: "value"</span></pre></div>
+<div><pre><span><strong>"name"</strong>: "Lyzi"</span></pre></div>
+<div><pre><span>"key": <strong>"value"</strong></span></pre></div>
+<div><pre><span>"name": <strong>"Lyzi"</strong></span></pre></div>
+<div>A <em>geojson object</em> must have at least <strong>three</strong> specific key-value pairs.</div>
+<div>First: <pre><span>"type": "Feature"</span></pre></div>
+<div>Second: <pre><span>"geometry"</span></pre></div>
+<div>The value in the key-value pair for <pre><span>"geometry"</span></pre> is actually an <em>object itself</em>.</div>
+<div>That object includes two things: <pre><span>"type"</span></pre> and <pre><span>"coordinates"</span></pre></div>
+<div><pre><span>"type": "Point"</span></pre><pre><span>"Point"</span></pre> can be <pre><span>"Polygon"</span></pre><pre><span>"LineString"</span></pre> or any other supported geometry type.</div>
+<div>See the <a href="http://geojson.org">specification</a> for a full list of geometry types.</div>
+<div><pre><span>"coordinates": [ -122.65, 45.51 ]</span></pre></div>
+<div>For <em>lines</em> or <em>polygons</em>, this will be a <strong>series of coordinate pairs</strong>.</div>
+<div>All together now: <pre><span>"geometry": <br>  { "type": "Point",<br>    "coordinates": <br>      [ - 122.65, 45.51 ]<br>  }</span></pre></div>
+<div>Third: <pre><span>"properties"</span></pre></div>
+<div>Like <pre><span>"geometry"</span></pre><pre><span>"properties"</span></pre> also has an <em>object</em> as its value.</div>
+<div>Inside of that object, you can add whatever properties you want.</div>
+<div><pre><span>"properties":<br>  { <br>    "name": "Lyzi", <br>    "age": 25, <br>    "city": "Oakland, CA" <br>  }</span></pre></div>
+<div>This gives us a <strong>GeoJSON object</strong>:</div>
+<div><img src="./images/geojson.png" /></div>
+<div>Most GeoJSON datasets you will come across have <em>more than one</em> feature in them.</div>
+<div>This is written as a <strong>FeatureCollection</strong> that contains all of the features.</div>
+<div><img src="./images/featurecollection.png" /></div>
+<div>The <em>features</em> are listed as an <strong>array</strong> of objects.</div>
+<div><em>Arrays</em> are bookended by <strong>square brackets:</strong> <pre><span>[1, 4, 3]</span></pre></div>
+<div>Now we know what a <em>GeoJSON</em> file looks like!</div>
+<div><strong>Note:</strong> GeoJSON files can have three different file extensions: <em>.geojson</em>, <em>.json</em>, and <em>.js</em>.</div>
+<div><em>PART TWO:</em> How do I <strong>use</strong> a GeoJSON file?</div>
+<div>Let me count the ways...</div>
+<div>Let's first <em>download</em> a geojson file.</div>
+<div>Head over to <a href="http://bit.ly/earthquake-data">bit.ly /earthquake-data</a>.</div>
+<div>Scroll down and right-click to save the GeoJSON for <strong>Past Day M2.5+ earthquakes</strong>.</div>
+<div><img src="./images/earthquakedata.png" /></div>
+<div>Once you have it downloaded, <em>open it</em> in a text editor. Or, you can just <em>click</em> on the link to see it in the browser.</div>
+<div><img src="./images/earthquakegj.png" />This shows the <strong>earthquakes > magnitude 2.5 in the past day</strong>. Notice the <strong>geometry</strong> and <strong>properties</strong> for each one?</div>
+<div>Now let's <strong>put them on a map</strong>. Head over to <a href="http://gist.github.com">gist.github.com</a>.</div>
+<div><em>Copy</em> and <em>paste</em> the geojson into the box, either from the <strong>file</strong> or from the <strong>browser</strong>.</div>
+<div>Where it says <strong>Name this file...</strong>, type <em>earthquakes.json</em>.</div>
+<div><img src="./images/earthquakesgist.png" /></div>
+<div>When you're done, click <strong>Create public gist</strong>.</div>
+<div><img src="./images/gistmap.png" />Woohoo!</div>
+<div>If you <em>click</em> on one of the map markers, you will see the information in <strong>properties</strong> for each earthquake.</div>
+<div><img src="./images/earthquakeprops.png" /></div>
+<div>This map is <strong>embeddable</strong>. Head to <a href="http://bit.ly/github-maps">bit.ly/github-maps</a> to learn more about that.</div>
+<div>Let's say we want a <em>little</em> more customization of our map. We can use <strong>Mapbox</strong>'s in-browser editor.</div>
+<div>Head over to <a href="http://mapbox.com/">mapbox.com</a>. If you have an account, log-in. If you don't, use this one: <pre><span>username: beginningmaps</span></pre><pre><span>password: maps4beginners</span></pre></div>
+<div>Click <em>Projects</em> at the top, and then <em>Create Project</em>.</div>
+<div><img src="./images/mapboxdata.png" />Click <strong>Data</strong> at the top, then <strong>import</strong>.</div>
+<div>Select the <em>earthquakes GeoJSON file</em> you downloaded before.</div>
+<div>You now have the option of selecting what <strong>property</strong> you'd like to use for popups, how you'd like to <strong>style</strong> your markers, and so on.</div>
+<div><em>Make your selections</em> for each of the tabs and click <strong>Finish importing</strong>.</div>
+<div><img src="./images/mapboxquakes.png" /></div>
+<div>You can also <strong>customize the basemap</strong> using the <em>Style</em> tab at the top, and share the map via the <em>Project</em> tab.</div>
+<div><em>PART THREE:</em> How do I <strong>convert</strong> my data to GeoJSON?</div>
+<div>There are <em>a few ways</em> to do this, and it depends on the <strong>type</strong> of data you have.</div>
+<div>If you have a <em>KML</em> or <em>CSV</em>, you can use a radical tool called <a href="http://geojson.io">geojson.io</a></div>
+<div><img src="./images/geojsonio.png" /></div>
+<div>You can also <strong>edit GeoJSON</strong>, <strong>save</strong> to a file or to GitHub, and do a variety of other things.</div>
+<div>Go ahead and <em>open</em> the earthquakes geojson you downloaded earlier in <strong>geojson.io</strong> and <em>edit</em> some of the points.</div>
+<div>This tool does <strong>not</strong> at this time handle <em>Shapefiles</em>. How do we convert those?</div>
+<div>One way is using a browser tool called <strong>Ogre</strong>. Head to <a href="http://bit.ly/ogre-web">bit.ly/ogre-web</a> and try it out.</div>
+<div>If you don't have a shapefile handy, head to <a href="http://bit.ly/fayette-co">bit.ly/fayette-co</a> and download the zip. Then convert it with <strong>Ogre</strong>.</div>
+<div>Once you have the geojson from Ogre, <em>visualize</em> it with one of the techniques we talked about!</div>
+<div>Other techniques include using <a href="http://qgis.org">QGIS</a> or <a href="http://www.gdal.org/ogr2ogr.html">ogr2ogr</a> in the command line.</div>
+<div><em>PART FOUR:</em> How do I add GeoJSON to my <strong>Leaflet</strong> map?</div>
+<div>I'm going to show you <strong>my favorite way</strong> to do this. I have also written a <a href="http://lyzidiamond.com/posts/external-geojson-and-leaflet-the-other-way/">blog post</a> about it. Note that it is <em>not</em> the official Leaflet-suggested method.</div>
+<div>Head to <a href="http://bit.ly/cat-news">bit.ly/cat-news</a>.</div>
+<div>This is a project called <em>CatNews</em> where you can add <strong>news about cats</strong> to a map by editing GeoJSON.</div>
+<div>(You can view it live at <a href="http://lyzidiamond.com/catnews">lyzidiamond.com /catnews</a>.)</div>
+<div>Click on <em>catnews.js</em>.</div>
+<div><img src="./images/catnews.png" /></div>
+<div><strong>Note:</strong> this project uses <a href="http://mapbox.com/mapbox.js">Mapbox.js</a>, which extends <em>Leaflet</em>. The technique will work with <a href="http://leafletjs.com">Leaflet.js</a> as well.</div>
+<div><strong>Line 2</strong> initializes the map. <strong>Lines 4-7</strong> add an image for map markers. <strong>Lines 9-15</strong> enable popups and zooming to feature on click. We are going to focus on <strong>lines 17-26</strong>.</div>
+<div>The <em>getJSON</em> method is a <a href="http://jquery.com">jQuery</a> method that makes an <strong>ajax</strong> request for the geojson.</div>
+<div>This part might get confusing -- for more background and info click <a href="http://lyzidiamond.com/posts/osgeo-august-meeting/">here</a> and <a href="http://lyzidiamond.com/posts/external-geojson-and-leaflet-the-other-way/">here</a>.</div>
+<div><strong>getJSON</strong> takes two parameters: a <em>URL for the file</em>, and a <em>callback function</em>.</div>
+<div>The <strong>callback function</strong> specifies what should be done when the file is <em>successfully retrieved</em>.</div>
+<div>For us, this means <em>making a Leaflet geojson object</em>, <em>assigning it to a variable</em>, adding <em>options</em>, and <em>adding it to the map</em>.</div>
+<div><img src="./images/catnews-live.png" /></div>
+<div>Again, this is just <strong>my preferred method</strong> for adding GeoJSON to a Leaflet map. You may prefer the <a href="http://leafletjs.com/examples/geojson.html">the official Leaflet method</a>.</div>
+<div><em>PART FIVE:</em> Conclusion!</div>
+<div><strong>What have we learned today?</strong></div>
+<div>We learned <em>what GeoJSON is</em>.</div>
+<div>We learned <em>two ways to visualize GeoJSON in the browser</em>.</div>
+<div>We learned <em>some techniques for converting to GeoJSON</em>.</div>
+<div>We learned <em>how to add GeoJSON to a Leaflet map</em>.</div>
+<div>Pat yourself on the back! <strong>You are awesome!</strong></div>
+<div>Keep playing with this stuff. <em>Keep learning.</em> It just gets more fun.</div>
+<div>Thanks!</div>
+<div>My name is Lyzi! I am on Twitter at <a href="http://twitter.com/lyzidiamond">@lyzidiamond</a>! MaptimeOAK is on Twitter at <a href="http://twitter.com/maptimeoak">@MaptimeOAK!</a> Holler at us!</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47757349-1', 'lyzidiamond.com');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>

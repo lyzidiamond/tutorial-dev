@@ -1,0 +1,59 @@
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  background:#aaa no-repeat;
+  color:#368A52;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+strong, em, a {
+  font-style:normal;
+  color:#FFCC00;
+}
+
+strong {
+  color: #C76521;
+}
+
+a {
+  background: #FFCC00;
+  color:#555;
+  text-decoration:none;
+}
+
+img {
+  width: 100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:75px;
+  line-height:97%;
+}
+
+pre {
+  font-family: 'Courier';
+  color: #888;
+}
+
+span {
+  background: #ddd;
+}
+
+div.center {
+  text-align:center;
+}
+
+div.imageText {
+  text-shadow:0px 0px 5px rgba(0,0,0,0.2);
+}
