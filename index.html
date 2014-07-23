@@ -2,105 +2,110 @@
 <link href='big.css' rel='stylesheet' type='text/css' />
 <script src='big.js'></script></head><body>
 
-<div>Using GeoJSON in Web Maps!</div>
+<div><strong>Developing Tutorials</strong> (for Maptime and beyond!)</div>
 <div><em>PLEASE</em> interrupt if you have questions!</div>
-<div>Go to <a href="http://lyzidiamond.com/geojson-in-maps">http://lyzidiamond.com /geojson-in-maps</a> to follow along.</div>
-<div>(Use <strong>left</strong> and <strong>right</strong> arrows to navigate. Links have a <a href="#4">yellow background</a>.)</div>
-<div><em>PART ONE:</em> What is <strong>GeoJSON</strong>?</div>
-<div><em>GeoJSON</em> is a <strong>geographic data format</strong>.</div>
-<div>It is an extension of <strong>JSON</strong>, which stands for <em>JavaScript Object Notation</em>.</div>
-<div>GeoJSON has its <a href="http://geojson.org">own specification</a> for what must be included.</div>
-<div class="center"><img src="./images/geojson.png" />GeoJSON! <strong>:)</strong></div>
-<div>Let's break it down.</div>
-<div><em>JavaScript objects</em> exist of a series of <strong>key-value pairs</strong>.</div>
-<div><pre><span><strong>"key"</strong>: "value"</span></pre></div>
-<div><pre><span><strong>"name"</strong>: "Lyzi"</span></pre></div>
-<div><pre><span>"key": <strong>"value"</strong></span></pre></div>
-<div><pre><span>"name": <strong>"Lyzi"</strong></span></pre></div>
-<div>A <em>geojson object</em> must have at least <strong>three</strong> specific key-value pairs.</div>
-<div>First: <pre><span>"type": "Feature"</span></pre></div>
-<div>Second: <pre><span>"geometry"</span></pre></div>
-<div>The value in the key-value pair for <pre><span>"geometry"</span></pre> is actually an <em>object itself</em>.</div>
-<div>That object includes two things: <pre><span>"type"</span></pre> and <pre><span>"coordinates"</span></pre></div>
-<div><pre><span>"type": "Point"</span></pre><pre><span>"Point"</span></pre> can be <pre><span>"Polygon"</span></pre><pre><span>"LineString"</span></pre> or any other supported geometry type.</div>
-<div>See the <a href="http://geojson.org">specification</a> for a full list of geometry types.</div>
-<div><pre><span>"coordinates": [ -122.65, 45.51 ]</span></pre></div>
-<div>For <em>lines</em> or <em>polygons</em>, this will be a <strong>series of coordinate pairs</strong>.</div>
-<div>All together now: <pre><span>"geometry": <br>  { "type": "Point",<br>    "coordinates": <br>      [ - 122.65, 45.51 ]<br>  }</span></pre></div>
-<div>Third: <pre><span>"properties"</span></pre></div>
-<div>Like <pre><span>"geometry"</span></pre><pre><span>"properties"</span></pre> also has an <em>object</em> as its value.</div>
-<div>Inside of that object, you can add whatever properties you want.</div>
-<div><pre><span>"properties":<br>  { <br>    "name": "Lyzi", <br>    "age": 25, <br>    "city": "Oakland, CA" <br>  }</span></pre></div>
-<div>This gives us a <strong>GeoJSON object</strong>:</div>
-<div><img src="./images/geojson.png" /></div>
-<div>Most GeoJSON datasets you will come across have <em>more than one</em> feature in them.</div>
-<div>This is written as a <strong>FeatureCollection</strong> that contains all of the features.</div>
-<div><img src="./images/featurecollection.png" /></div>
-<div>The <em>features</em> are listed as an <strong>array</strong> of objects.</div>
-<div><em>Arrays</em> are bookended by <strong>square brackets:</strong> <pre><span>[1, 4, 3]</span></pre></div>
-<div>Now we know what a <em>GeoJSON</em> file looks like!</div>
-<div><strong>Note:</strong> GeoJSON files can have three different file extensions: <em>.geojson</em>, <em>.json</em>, and <em>.js</em>.</div>
-<div><em>PART TWO:</em> How do I <strong>use</strong> a GeoJSON file?</div>
-<div>Let me count the ways...</div>
-<div>Let's first <em>download</em> a geojson file.</div>
-<div>Head over to <a href="http://bit.ly/earthquake-data">bit.ly /earthquake-data</a>.</div>
-<div>Scroll down and right-click to save the GeoJSON for <strong>Past Day M2.5+ earthquakes</strong>.</div>
-<div><img src="./images/earthquakedata.png" /></div>
-<div>Once you have it downloaded, <em>open it</em> in a text editor. Or, you can just <em>click</em> on the link to see it in the browser.</div>
-<div><img src="./images/earthquakegj.png" />This shows the <strong>earthquakes > magnitude 2.5 in the past day</strong>. Notice the <strong>geometry</strong> and <strong>properties</strong> for each one?</div>
-<div>Now let's <strong>put them on a map</strong>. Head over to <a href="http://gist.github.com">gist.github.com</a>.</div>
-<div><em>Copy</em> and <em>paste</em> the geojson into the box, either from the <strong>file</strong> or from the <strong>browser</strong>.</div>
-<div>Where it says <strong>Name this file...</strong>, type <em>earthquakes.json</em>.</div>
-<div><img src="./images/earthquakesgist.png" /></div>
-<div>When you're done, click <strong>Create public gist</strong>.</div>
-<div><img src="./images/gistmap.png" />Woohoo!</div>
-<div>If you <em>click</em> on one of the map markers, you will see the information in <strong>properties</strong> for each earthquake.</div>
-<div><img src="./images/earthquakeprops.png" /></div>
-<div>This map is <strong>embeddable</strong>. Head to <a href="http://bit.ly/github-maps">bit.ly/github-maps</a> to learn more about that.</div>
-<div>Let's say we want a <em>little</em> more customization of our map. We can use <strong>Mapbox</strong>'s in-browser editor.</div>
-<div>Head over to <a href="http://mapbox.com/">mapbox.com</a>. If you have an account, log-in. If you don't, use this one: <pre><span>username: beginningmaps</span></pre><pre><span>password: maps4beginners</span></pre></div>
-<div>Click <em>Projects</em> at the top, and then <em>Create Project</em>.</div>
-<div><img src="./images/mapboxdata.png" />Click <strong>Data</strong> at the top, then <strong>import</strong>.</div>
-<div>Select the <em>earthquakes GeoJSON file</em> you downloaded before.</div>
-<div>You now have the option of selecting what <strong>property</strong> you'd like to use for popups, how you'd like to <strong>style</strong> your markers, and so on.</div>
-<div><em>Make your selections</em> for each of the tabs and click <strong>Finish importing</strong>.</div>
-<div><img src="./images/mapboxquakes.png" /></div>
-<div>You can also <strong>customize the basemap</strong> using the <em>Style</em> tab at the top, and share the map via the <em>Project</em> tab.</div>
-<div><em>PART THREE:</em> How do I <strong>convert</strong> my data to GeoJSON?</div>
-<div>There are <em>a few ways</em> to do this, and it depends on the <strong>type</strong> of data you have.</div>
-<div>If you have a <em>KML</em> or <em>CSV</em>, you can use a radical tool called <a href="http://geojson.io">geojson.io</a></div>
-<div><img src="./images/geojsonio.png" /></div>
-<div>You can also <strong>edit GeoJSON</strong>, <strong>save</strong> to a file or to GitHub, and do a variety of other things.</div>
-<div>Go ahead and <em>open</em> the earthquakes geojson you downloaded earlier in <strong>geojson.io</strong> and <em>edit</em> some of the points.</div>
-<div>This tool does <strong>not</strong> at this time handle <em>Shapefiles</em>. How do we convert those?</div>
-<div>One way is using a browser tool called <strong>Ogre</strong>. Head to <a href="http://bit.ly/ogre-web">bit.ly/ogre-web</a> and try it out.</div>
-<div>If you don't have a shapefile handy, head to <a href="http://bit.ly/fayette-co">bit.ly/fayette-co</a> and download the zip. Then convert it with <strong>Ogre</strong>.</div>
-<div>Once you have the geojson from Ogre, <em>visualize</em> it with one of the techniques we talked about!</div>
-<div>Other techniques include using <a href="http://qgis.org">QGIS</a> or <a href="http://www.gdal.org/ogr2ogr.html">ogr2ogr</a> in the command line.</div>
-<div><em>PART FOUR:</em> How do I add GeoJSON to my <strong>Leaflet</strong> map?</div>
-<div>I'm going to show you <strong>my favorite way</strong> to do this. I have also written a <a href="http://lyzidiamond.com/posts/external-geojson-and-leaflet-the-other-way/">blog post</a> about it. Note that it is <em>not</em> the official Leaflet-suggested method.</div>
-<div>Head to <a href="http://bit.ly/cat-news">bit.ly/cat-news</a>.</div>
-<div>This is a project called <em>CatNews</em> where you can add <strong>news about cats</strong> to a map by editing GeoJSON.</div>
-<div>(You can view it live at <a href="http://lyzidiamond.com/catnews">lyzidiamond.com /catnews</a>.)</div>
-<div>Click on <em>catnews.js</em>.</div>
-<div><img src="./images/catnews.png" /></div>
-<div><strong>Note:</strong> this project uses <a href="http://mapbox.com/mapbox.js">Mapbox.js</a>, which extends <em>Leaflet</em>. The technique will work with <a href="http://leafletjs.com">Leaflet.js</a> as well.</div>
-<div><strong>Line 2</strong> initializes the map. <strong>Lines 4-7</strong> add an image for map markers. <strong>Lines 9-15</strong> enable popups and zooming to feature on click. We are going to focus on <strong>lines 17-26</strong>.</div>
-<div>The <em>getJSON</em> method is a <a href="http://jquery.com">jQuery</a> method that makes an <strong>ajax</strong> request for the geojson.</div>
-<div>This part might get confusing -- for more background and info click <a href="http://lyzidiamond.com/posts/osgeo-august-meeting/">here</a> and <a href="http://lyzidiamond.com/posts/external-geojson-and-leaflet-the-other-way/">here</a>.</div>
-<div><strong>getJSON</strong> takes two parameters: a <em>URL for the file</em>, and a <em>callback function</em>.</div>
-<div>The <strong>callback function</strong> specifies what should be done when the file is <em>successfully retrieved</em>.</div>
-<div>For us, this means <em>making a Leaflet geojson object</em>, <em>assigning it to a variable</em>, adding <em>options</em>, and <em>adding it to the map</em>.</div>
-<div><img src="./images/catnews-live.png" /></div>
-<div>Again, this is just <strong>my preferred method</strong> for adding GeoJSON to a Leaflet map. You may prefer the <a href="http://leafletjs.com/examples/geojson.html">the official Leaflet method</a>.</div>
-<div><em>PART FIVE:</em> Conclusion!</div>
-<div><strong>What have we learned today?</strong></div>
-<div>We learned <em>what GeoJSON is</em>.</div>
-<div>We learned <em>two ways to visualize GeoJSON in the browser</em>.</div>
-<div>We learned <em>some techniques for converting to GeoJSON</em>.</div>
-<div>We learned <em>how to add GeoJSON to a Leaflet map</em>.</div>
+<div>Go to <a href="http://lyzidiamond.com/tutorial-dev">http://lyzidiamond.com /tutorial-dev</a> to follow along.</div>
+<div>(Use <strong>left</strong> and <strong>right</strong> arrows to navigate. Links have a <a href="#4">purple background</a>.)</div>
+<div>What defines a <em>Maptime tutorial</em>?</div>
+<div><strong>Maptime tutorials</strong> are <em>beginner-focused</em>.</div>
+<div>Like <a href="http://maptime.github.io/osm-101/">OSM 101</a>!</div>
+<div><strong>Maptime tutorials</strong> are related to <em>maps</em> and/or <em>geospatial concepts</em>.</div>
+<div>Like <a href="http://maptime.github.io/geodata/">Introduction to Geographic Data Formats</a>!</div>
+<div><strong>Maptime tutorials</strong> have a <em>hands-on</em> element.</div>
+<div>Like <a href="http://lyzidiamond.com/leaflet/">Hell Yes, Leaflet</a>!</div>
+<div><strong>Maptime tutorials</strong> <em>link</em> to places with more info.</div>
+<div>Like <a href="http://maptime.github.io/anatomy-of-a-web-map/">Anatomy of a Web Map</a>!</div>
+<div><strong>Maptime tutorials</strong> are <em>FUN</em>! :)</div>
+<div>(Like <a href="http://github.com/maptime">ALL OF THEM</a>!)</div>
+<div>Let's <em>brainstorm</em>. What are some potential <strong>tutorial topics</strong>?</div>
+<div><em>AWESOME!</em> Y'all are so smart. <strong>:)</strong></div>
+<div><strong>Things to consider</strong> when picking a topic:</div>
+<div><em>Time.</em></div>
+<div><em>Audience.</em></div>
+<div><em>Hands-on-ability.</em></div>
+<div><em>REMEMBER:</em> Beginners make the best teachers!</div>
+<div><strong>Anxiety</strong> is normal. <strong>Impostor syndrome</strong> is pervasive. <em>You must stay strong!</em></div>
+<div class="center"><img src="http://i.imgur.com/XeIkh2g.jpg" /> </div>
+<div class="center"><img src="http://loldamn.com/wp-content/uploads/2014/06/cute-potato-tiny-cheer-quote.jpg" /> </div>
+<div>"My life is a tomato."</div>
+<div class="center"><img src="./images/210.jpg" /> </div>
+<div>How is a <em>Maptime tutorial</em> structured?</div>
+<div>There are <strong>many</strong> different ways to do it. Today I will just be showing you <em>my</em> process. Feel free to <strong>fork</strong> and <strong>customize</strong>!</div>
+<div>For purposes of today, we will be discussing a <em>tutorial about using BART</em>.</div>
+<div class="center"><img src="http://cdn.funcheap.com/wp-content/uploads/2009/12/500px-Bart-logo.svg_1.png" /></div>
+<div><em>STEP ONE:</em> Define your terms and your purpose.</div>
+<div><strong>Beginner-friendly</strong> means <em>no assumptions</em>. <strong>ANY</strong> word that is technical should be <em>explicitly defined</em>.</div>
+<div><em>For example...</em></div>
+<div>What is <strong>BART</strong>?</div>
+<div><strong>BART</strong> stands for <strong>Bay Area Rapid Transit</strong>. It is public rail transportation in the SF Bay area.</div>
+<div>What is <strong>public transportation</strong>?</div>
+<div>Why might you want to <strong>use</strong> BART?</div>
+<div>... and so on.</div>
+<div>On this note, think about <em>how you get information</em> from the crowd.</div>
+<div><strong>"Everyone here knows what BART is right?"</strong> vs <strong>"Who here can tell us what BART is?"</strong></div>
+<div><em>STEP TWO:</em> Break down the process into several steps.</div>
+<div>There should be a <strong>logical flow</strong> to your description.</div>
+<div><em>For example...</em></div>
+<div>Before we <strong>enter</strong> the station, we need to purchase a <strong>BART ticket</strong>.</div>
+<div>BART has <strong>variable pricing</strong> per stop. This means your <strong>trip cost</strong> will be different depending on your <strong>origin</strong> and <strong>destination</strong>.</div>
+<div>... and so on.</div>
+<div><em>STEP THREE:</em> Note the nuances.</div>
+<div>When it comes to <strong>geospatial</strong>, there are <em>many</em> ways to do things.</div>
+<div><em>Note</em> your preferred methods for doing things and <strong>keep in mind</strong> the alternatives.</div>
+<div><em>For example...</em></div>
+<div>There are <strong>two options</strong> for paying for BART: you can buy a <strong>ticket</strong>, or you can use a <strong>Clipper card</strong>.</div>
+<div><img src="http://learnwageworks.com/commutercard/images/clipper_card_front_lr.jpg" /></div>
+<div><strong>Clipper cards</strong> can be preloaded from a bank account and used on <strong>multiple</strong> types of transit beyond BART.</div>
+<div><strong>BART tickets</strong> are purchased in BART stations and can <strong>only</strong> be used on BART.</div>
+<div>... and so on.</div>
+<div><em>STEP FOUR:</em> Make it real.</div>
+<div>Incorporate as many <strong>real world examples</strong> as possible.</div>
+<div>Use <em>pictures</em>!</div>
+<div><img src="http://sf.streetsblog.org/wp-content/uploads/2009/06_04/BART%20photos_1.jpg" /></div>
+<div>It usually takes <em>several times</em> of explaining something to facilitate understanding, and we all learn <strong>differently</strong>.</div>
+<div>The <em>more ways</em> we show/teach something, the <strong>more likely</strong> it is that people will keep learning!</div>
+<div>This also includes the <strong>MOST IMPORTANT</strong> thing you need to do:</div>
+<div><em>HANDS-ON ACTIVITIES!</em></div>
+<div>For example...</div>
+<div>Let's figure out the time of day it would take the <strong>longest</strong> to travel from <em>Castro Valley</em> to <em>Richmond</em> and the time of day it would take the <strong>least</strong> amount of time.</div>
+<div>What is the <strong>most expensive trip</strong> you can take on BART?</div>
+<div>... and so on.</div>
+<div><em>STEP FIVE:</em> Sum it up (and add some encouragement!)</div>
+<div>At the end of the day, make sure to <strong>recap</strong> what all was learned.</div>
+<div>Also, everyone who came did some <em>hard work</em>! Be sure to give some (virtual) <strong>pats on the back</strong>.</div>
+<div>Finally, provide <em>links</em> for people to learn more. Plus your <strong>contact info</strong>!</div>
+<div><em>For example...</em></div>
+<div><strong>What did we learn today?</strong></div>
+<div>We learned what <strong>BART</strong> is!</div>
+<div>We learned the <strong>different ways</strong> we can pay for BART!</div>
+<div>Great job! <strong>You all are champions!!!</strong></div>
+<div>Check out <a href="http://bart.gov">bart.gov</a> to learn more.</div>
+<div>... and so on.</div>
+<div>Some more things to keep in mind:</div>
+<div><strong>Pause periodically</strong> to ask if anyone has <em>questions</em>.</div>
+<div>If someone asks a question and <strong>you don't know the answer</strong>, that's <em>okay</em>! Odds are <strong>someone in the room</strong> can answer it. <em>Feel free to defer.</em></div>
+<div>Having presentation slides is a <strong>good idea</strong>. I use <a href="http://github.com/tmcw/big">Big</a> for my slides.</div>
+<div>Be sure to <em>put your slides</em> on the <a href="http://github.com/maptime">Maptime GitHub</a> so other Maptimes can use them.</div>
+<div>If you're <strong>unsure what to teach</strong>, there's a list of potential topics <a href="https://github.com/maptime/maptime/issues/20">here</a>.</div>
+<div>(But really, if you're <em>excited</em> about it and it's about <strong>maps</strong>, you're probably <em>good to go</em>!)</div>
+<div>EXCELLENT! Let's <strong>get our hands dirty</strong>.</div>
+<div><em>Break off into groups</em> of 3-4.</div>
+<div><em>Determine a topic</em> you'd like to teach (something <strong>Maptime-appropriate</strong>).</div>
+<div><em>Write an outline</em> for an hour-long presentation.</div>
+<div><strong>Your outline should include:</strong></div>
+<div>terms to define</div>
+<div>a rough idea of what you'll explain</div>
+<div>a few hands-on tasks</div>
+<div>and the main takeaways.</div>
+<div><em>Extra credit</em> for photos!</div>
+<div>In a bit, we'll <em>regroup</em> and each team will have <strong>five minutes</strong> to tell the group what they came up with.</div>
+<div>If you have any <strong>questions</strong>, Beth and I will be wandering around.</div>
+<div><strong>Next steps:</strong></div>
+<div><em>Find some people</em> and build a tutorial!</div>
+<div><em>Sign up</em> to do a tutorial in the future!</div>
+<div><em>Ask us for help!</em></div>
 <div>Pat yourself on the back! <strong>You are awesome!</strong></div>
-<div>Keep playing with this stuff. <em>Keep learning.</em> It just gets more fun.</div>
+<div><em>Keep learning.</em> Do it through <strong>teaching!</strong> It just gets more fun.</div>
 <div>Thanks!</div>
 <div>My name is Lyzi! I am on Twitter at <a href="http://twitter.com/lyzidiamond">@lyzidiamond</a>! MaptimeOAK is on Twitter at <a href="http://twitter.com/maptimeoak">@MaptimeOAK!</a> Holler at us!</div>
 
