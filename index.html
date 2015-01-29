@@ -1,41 +1,133 @@
 <!DOCTYPE html><html><head><title>Big</title><meta charset='utf-8'><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <link href='big.css' rel='stylesheet' type='text/css' />
-<script src='big.js'></script></head><body>
+<script src='big.js'></script>
+<style>
+.maptime {
+  background-image: url(http://maptime.io/img/maptimes.gif);
+  background-repeat: no-repeat;
+  background-position: center 50px;
+  background-size: 75%;
+}
+.cactus {
+  background-image: url(http://i.imgur.com/XeIkh2g.jpg);
+  background-repeat: no-repeat;
+  background-position: center 50px;
+  background-size: 50%;
+}
+.potato {
+  background-image: url(http://loldamn.com/wp-content/uploads/2014/06/cute-potato-tiny-cheer-quote.jpg);
+  background-repeat: no-repeat;
+  background-position: center 50px;
+  background-size: 50%;
+}
+.tomato {
+  background-image: url(http://insidioustomatoes.com/wp-content/uploads/2013/01/GP_Tomato_Cover1.jpg);
+  background-repeat: no-repeat;
+  background-position: center 100px;
+  background-size: 50%;
+}
+.kitty {
+  background-image: url(./images/210.jpg);
+  background-repeat: no-repeat;
+  background-position: center 50px;
+  background-size: 60%;
+}
+.bart {
+  background-image: url(http://cdn.funcheap.com/wp-content/uploads/2009/12/500px-Bart-logo.svg_1.png);
+  background-repeat: no-repeat;
+}
+.clock {
+  background-image: url(http://i.giphy.com/KcvtgLaIQcVnG.gif);
+  background-repeat: repeat;
+  background-size: 20%;
+}
+.applause {
+  background-image: url(http://i.giphy.com/Ucvfi6Vnig6Ri.gif);
+  background-repeat: repeat;
+  background-size: 20%;
+}
+.diy {
+  background-image: url(http://i.giphy.com/9gtRT7bSaYous.gif);
+  background-repeat: repeat;
+  background-size: 20%;
+}
+.swirl {
+  background-image: url(http://i.giphy.com/2twF2SEXj4oZG.gif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.bart-train {
+  background-image: url(http://sf.streetsblog.org/wp-content/uploads/2009/06_04/BART%20photos_1.jpg);
+  background-repeat: no-repeat;
+  background-position: center 5px;
+  background-size: 65%;
+}
+.clipper {
+  background-image: url(http://learnwageworks.com/commutercard/images/clipper_card_front_lr.jpg);
+  background-repeat: no-repeat;
+  background-position: center 5px;
+  background-size: 30%;
+}
+.bart-fares {
+  background-image: url(http://studio-tm.com/metrostations/wp-content/uploads/2012/03/BART-STATION-ROCKRIDGE-STATION-METRO-SUBWAY-INSIDE-TICKET-FARE-LIST-FOR-ALL-STATIONS-FROM-ROCKRIDGE.jpg);
+  background-repeat: no-repeat;
+  background-position: center 5px;
+  background-size: 75%;
+}
+.back-pat {
+  background-image: url(http://i.giphy.com/9Q249Qsl5cfLi.gif);
+  background-repeat: no-repeat;
+  background-position: center 5px;
+}
+.raise-hands {
+  background-image: url(http://i.giphy.com/zmhkXPDOjVsha.gif);
+  background-repeat: no-repeat;
+  background-position: center 5px;
+}
+</style>
+
+</head><body>
 
 <div><strong>Developing Tutorials</strong> (for Maptime and beyond!)</div>
 <div><em>PLEASE</em> interrupt if you have questions!</div>
 <div>Go to <a href="http://lyzidiamond.com/tutorial-dev">http://lyzidiamond.com /tutorial-dev</a> to follow along.</div>
 <div>(Use <strong>left</strong> and <strong>right</strong> arrows to navigate. Links have a <a href="#4">purple background</a>.)</div>
-<div>What defines a <em>Maptime tutorial</em>?</div>
+<div data-bodyclass='maptime'><br><br><br><br>This is a talk about developing <strong>Maptime-style tutorials</strong>.</div>
+<div><em>A lot</em> of this advice can be carried over to <strong>non-Maptime tutorials</strong> that are <em>beginner-focused</em>.</div>
+<div>Just FYI :)</div>
+<div>What are some elements of a <em>Maptime tutorial</em>?</div>
 <div><strong>Maptime tutorials</strong> are <em>beginner-focused</em>.</div>
-<div>Like <a href="http://maptime.github.io/osm-101/">OSM 101</a>!</div>
+<div>Like <a href="http://maptime.io/osm-101/">OSM 101</a>!</div>
 <div><strong>Maptime tutorials</strong> are related to <em>maps</em> and/or <em>geospatial concepts</em>.</div>
-<div>Like <a href="http://maptime.github.io/geodata/">Introduction to Geographic Data Formats</a>!</div>
+<div>Like <a href="http://maptime.io/geodata/">Introduction to Geographic Data Formats</a>!</div>
 <div><strong>Maptime tutorials</strong> have a <em>hands-on</em> element.</div>
 <div>Like <a href="http://lyzidiamond.com/leaflet/">Hell Yes, Leaflet</a>!</div>
 <div><strong>Maptime tutorials</strong> <em>link</em> to places with more info.</div>
-<div>Like <a href="http://maptime.github.io/anatomy-of-a-web-map/">Anatomy of a Web Map</a>!</div>
+<div>Like <a href="http://maptime.io/anatomy-of-a-web-map/">Anatomy of a Web Map</a>!</div>
 <div><strong>Maptime tutorials</strong> are <em>FUN</em>! :)</div>
-<div>(Like <a href="http://github.com/maptime">ALL OF THEM</a>!)</div>
-<div>Let's <em>brainstorm</em>. What are some potential <strong>tutorial topics</strong>?</div>
+<div>(Like <a href="http://maptime.io/lessons-resources">ALL OF THEM</a>!)</div>
+<div>Since the <strong>first time</strong> we did this, the number of <em>Maptime tutorials</em> has grown <strong>exponentially</strong>. <a href='http://maptime.io/lessons-resources'>Lots to start with!</a></div>
+<div>But not <strong>everything</strong> has been done. Let's <em>brainstorm</em>. What are some potential <strong>tutorial topics</strong>?</div>
 <div><em>AWESOME!</em> Y'all are so smart. <strong>:)</strong></div>
 <div><strong>Things to consider</strong> when picking a topic:</div>
-<div><em>Time.</em></div>
-<div><em>Audience.</em></div>
-<div><em>Hands-on-ability.</em></div>
+<div data-bodyclass='clock'>Time.</div>
+<div data-bodyclass='applause'><em>Audience.</em></div>
+<div data-bodyclass='diy'><strong>Hands-on-ability.</strong></div>
 <div><em>REMEMBER:</em> Beginners make the best teachers!</div>
 <div><strong>Anxiety</strong> is normal. <strong>Impostor syndrome</strong> is pervasive. <em>You must stay strong!</em></div>
-<div class="center"><img src="http://i.imgur.com/XeIkh2g.jpg" /> </div>
-<div class="center"><img src="http://loldamn.com/wp-content/uploads/2014/06/cute-potato-tiny-cheer-quote.jpg" /> </div>
-<div>"My life is a tomato."</div>
-<div class="center"><img src="./images/210.jpg" /> </div>
+<div data-bodyclass='cactus'></div>
+<div data-bodyclass='potato'></div>
+<div data-bodyclass='tomato'><br><br><br><br>"My life is a tomato."</div>
+<div data-bodyclass='kitty'></div>
+<div>Feeling <strong>confident</strong> and <em>happy</em>?</div>
+<div><strong>Great!</strong> Let's get into it.</div>
 <div>How is a <em>Maptime tutorial</em> structured?</div>
 <div>There are <strong>many</strong> different ways to do it. Today I will just be showing you <em>my</em> process. Feel free to <strong>fork</strong> and <strong>customize</strong>!</div>
 <div>For purposes of today, we will be discussing a <em>tutorial about using BART</em>.</div>
-<div class="center"><img src="http://cdn.funcheap.com/wp-content/uploads/2009/12/500px-Bart-logo.svg_1.png" /></div>
+<div data-bodyclass='bart'></div>
 <div><em>STEP ONE:</em> Define your terms and your purpose.</div>
 <div><strong>Beginner-friendly</strong> means <em>no assumptions</em>. <strong>ANY</strong> word that is technical should be <em>explicitly defined</em>.</div>
-<div><em>For example...</em></div>
+<div data-bodyclass='swirl'>For example...</div>
 <div>What is <strong>BART</strong>?</div>
 <div><strong>BART</strong> stands for <strong>Bay Area Rapid Transit</strong>. It is public rail transportation in the SF Bay area.</div>
 <div>What is <strong>public transportation</strong>?</div>
@@ -45,73 +137,67 @@
 <div><strong>"Everyone here knows what BART is right?"</strong> vs <strong>"Who here can tell us what BART is?"</strong></div>
 <div><em>STEP TWO:</em> Break down the process into several steps.</div>
 <div>There should be a <strong>logical flow</strong> to your description.</div>
-<div><em>For example...</em></div>
+<div data-bodyclass='swirl'>For example...</div>
 <div>Before we <strong>enter</strong> the station, we need to purchase a <strong>BART ticket</strong>.</div>
 <div>BART has <strong>variable pricing</strong> per stop. This means your <strong>trip cost</strong> will be different depending on your <strong>origin</strong> and <strong>destination</strong>.</div>
+<div data-bodyclass='bart-fares'></div>
 <div>... and so on.</div>
 <div><em>STEP THREE:</em> Note the nuances.</div>
 <div>When it comes to <strong>geospatial</strong>, there are <em>many</em> ways to do things.</div>
 <div><em>Note</em> your preferred methods for doing things and <strong>keep in mind</strong> the alternatives.</div>
-<div><em>For example...</em></div>
+<div data-bodyclass='swirl'>For example...</div>
 <div>There are <strong>two options</strong> for paying for BART: you can buy a <strong>ticket</strong>, or you can use a <strong>Clipper card</strong>.</div>
-<div><img src="http://learnwageworks.com/commutercard/images/clipper_card_front_lr.jpg" /></div>
+<div data-bodyclass='clipper'></div>
 <div><strong>Clipper cards</strong> can be preloaded from a bank account and used on <strong>multiple</strong> types of transit beyond BART.</div>
 <div><strong>BART tickets</strong> are purchased in BART stations and can <strong>only</strong> be used on BART.</div>
 <div>... and so on.</div>
 <div><em>STEP FOUR:</em> Make it real.</div>
 <div>Incorporate as many <strong>real world examples</strong> as possible.</div>
 <div>Use <em>pictures</em>!</div>
-<div><img src="http://sf.streetsblog.org/wp-content/uploads/2009/06_04/BART%20photos_1.jpg" /></div>
+<div data-bodyclass='bart-train'></div>
 <div>It usually takes <em>several times</em> of explaining something to facilitate understanding, and we all learn <strong>differently</strong>.</div>
 <div>The <em>more ways</em> we show/teach something, the <strong>more likely</strong> it is that people will keep learning!</div>
 <div>This also includes the <strong>MOST IMPORTANT</strong> thing you need to do:</div>
 <div><em>HANDS-ON ACTIVITIES!</em></div>
-<div>For example...</div>
+<div data-bodyclass='swirl'>For example...</div>
 <div>Let's figure out the time of day it would take the <strong>longest</strong> to travel from <em>Castro Valley</em> to <em>Richmond</em> and the time of day it would take the <strong>least</strong> amount of time.</div>
 <div>What is the <strong>most expensive trip</strong> you can take on BART?</div>
 <div>... and so on.</div>
-<div><em>STEP FIVE:</em> Sum it up (and add some encouragement!)</div>
+<div><em>STEP FIVE:</em> Sum it up (and <strong>add some encouragement</strong>!)</div>
 <div>At the end of the day, make sure to <strong>recap</strong> what all was learned.</div>
 <div>Also, everyone who came did some <em>hard work</em>! Be sure to give some (virtual) <strong>pats on the back</strong>.</div>
+<div data-bodyclass='back-pat'></div>
 <div>Finally, provide <em>links</em> for people to learn more. Plus your <strong>contact info</strong>!</div>
-<div><em>For example...</em></div>
+<div data-bodyclass='swirl'>For example...</div>
 <div><strong>What did we learn today?</strong></div>
 <div>We learned what <strong>BART</strong> is!</div>
 <div>We learned the <strong>different ways</strong> we can pay for BART!</div>
 <div>Great job! <strong>You all are champions!!!</strong></div>
 <div>Check out <a href="http://bart.gov">bart.gov</a> to learn more.</div>
 <div>... and so on.</div>
-<div>Some more things to keep in mind:</div>
+<div>Some <em>more things</em> to keep in mind:</div>
 <div><strong>Pause periodically</strong> to ask if anyone has <em>questions</em>.</div>
+<div data-bodyclass='raise-hands'></div>
 <div>If someone asks a question and <strong>you don't know the answer</strong>, that's <em>okay</em>! Odds are <strong>someone in the room</strong> can answer it. <em>Feel free to defer.</em></div>
 <div>Having presentation slides is a <strong>good idea</strong>. I use <a href="http://github.com/tmcw/big">Big</a> for my slides.</div>
 <div>Be sure to <em>put your slides</em> on the <a href="http://github.com/maptime">Maptime GitHub</a> so other Maptimes can use them.</div>
-<div>(To learn more about git and GitHub, check out <a href="http://github.com/lyzidiamond/learn-geojson">learn-geojson</a>.)</div>
+<div>(To learn more about <em>git</em> and <em>GitHub</em>, check out <a href="http://github.com/lyzidiamond/learn-geojson">learn-geojson</a>.)</div>
+<div>Also be sure to put them on the Maptime <a href='http://maptime.io/lessons-resources'>Lessons and Resources Page</a>.</div>
 <div>If you're <strong>unsure what to teach</strong>, there's a list of potential topics <a href="https://github.com/maptime/maptime/issues/20">here</a>.</div>
 <div>(But really, if you're <em>excited</em> about it and it's about <strong>maps</strong>, you're probably <em>good to go</em>!)</div>
 <div>EXCELLENT! Let's <strong>get our hands dirty</strong>.</div>
-<div><em>Break off into groups</em> of 3-4.</div>
-<div><em>Determine a topic</em> you'd like to teach (something <strong>Maptime-appropriate</strong>).</div>
-<div><em>Write an outline</em> for an hour-long presentation.</div>
-<div><strong>Your outline should include:</strong></div>
-<div>terms to define</div>
-<div>a rough idea of what you'll explain</div>
-<div>a few hands-on tasks</div>
-<div>and the main takeaways.</div>
-<div><em>Extra credit</em> for photos!</div>
-<div>In a bit, we'll <em>regroup</em> and each team will have <strong>five minutes</strong> to tell the group what they came up with.</div>
-<div>If you have any <strong>questions</strong>, Beth, Alan, and I will be wandering around.</div>
-<div>The outline instructions are here: <a href="http://bit.ly/maptime-tutorial">bit.ly/maptime-tutorial</a></div>
+<div>We are going to do a <em>super fun exercise</em>!</div>
+<div>The instructions are here: <a href="http://bit.ly/maptime-tutorial">bit.ly/maptime-tutorial</a>. Let us know if you have <strong>questions</strong>!</div>
 <div class="center"><em>Presentation time!</em></div>
 <div><strong>Next steps:</strong></div>
-<div><em>Find some people</em> and build a tutorial!</div>
-<div><em>Sign up</em> to do a tutorial in the future!</div>
+<div><em>Build out</em> the tutorial you just outlined!</div>
+<div>Go find <a href='http://maptime.io/lessons-resources'>an existing Maptime tutorial</a>, adapt it, and sign up to present it!</div>
 <div><em>Ask us for help!</em></div>
 <div>Pat yourself on the back! <strong>You are awesome!</strong></div>
 <div><em>Keep learning.</em> Do it through <strong>teaching!</strong> It just gets more fun.</div>
-<div>Thanks!</div>
-<div>PS for more extra credit: <a href="https://www.youtube.com/watch?v=HctcGcrMXqM">bit.ly/geo-cfa</a></div>
-<div>My name is Lyzi! I am on Twitter at <a href="http://twitter.com/lyzidiamond">@lyzidiamond</a>! MaptimeOAK is on Twitter at <a href="http://twitter.com/maptimeoak">@MaptimeOAK!</a> Holler at us!</div>
+<div data-bodyclass='cactus'></div>
+<div data-bodyclass='swirl'>Thanks!</div>
+<div>My name is <em>Lyzi</em>! I am on <em>Twitter</em> at <a href="http://twitter.com/lyzidiamond">@lyzidiamond</a>! <em>MaptimeOAK</em> is on Twitter at <a href="http://twitter.com/maptimeoak">@MaptimeOAK!</a> Holler at us!</div>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
